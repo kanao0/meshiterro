@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "homes#top"
   
   # ルーティング一括設定new,index,showだけ
-  resources :post_images, only: [:new,:create, :index, :show]
+  resources :post_images, only: [:new,:create, :index, :show, :destroy]
   
   get '/homes/about', to: 'homes#about', as: 'about'
   # get 'homes/top'
