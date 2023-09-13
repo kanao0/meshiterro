@@ -11,11 +11,13 @@ class PostImagesController < ApplicationController
     @post_image.user_id = current_user.id
     # PostImageモデルへ保存
     @post_image.save
-    # 投稿一覧画面へリダイレクト
+    # 投稿一覧画面へリダイレクトindex処理へ
     redirect_to post_images_path
   end  
 
   def index
+# データ表示したい、データを入れた箱(@post_images)を作る
+    @post_images = PostImage.all 
   end
 
   def show
