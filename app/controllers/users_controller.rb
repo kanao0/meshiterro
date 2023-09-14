@@ -8,5 +8,24 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
+  
+
+  def update
+    # updateされたデータを入れる箱つくる
+    @user = User.find(params[:id])
+    # ユーザーのアップデート  
+    @user.update(user_params)
+    # ユーザー詳細ページへ 
+    redirect_to user_path  
+  end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :profile_image)
+  end  
+  
 end
