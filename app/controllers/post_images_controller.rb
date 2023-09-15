@@ -23,6 +23,7 @@ class PostImagesController < ApplicationController
   def show
     # Post_Imageモデルのデータみつけてきて～データの箱は@Post_Imageって名前    
     @post_image = PostImage.find(params[:id])
+    @post_comment = PostComment.new  
     
   end
   
