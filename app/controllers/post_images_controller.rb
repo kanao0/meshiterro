@@ -22,7 +22,9 @@ class PostImagesController < ApplicationController
 
   def index
 # データ表示したい、データを入れた箱(@post_images)を作る
-    @post_images = PostImage.all 
+    # @post_images = PostImage.all
+    # 1ページ分の決められた数のデータだけを、新しい順に取得する
+    @post_images = PostImage.page(params[:page])
   end
 
   def show
